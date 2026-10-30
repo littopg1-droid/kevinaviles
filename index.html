@@ -1,0 +1,337 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PRIVATE ARCHIVE — Model 001</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:wght@300;400;500;700&family=Space+Mono&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #090909;
+    color: #eee;
+    font-family: 'DM Sans', sans-serif;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 10;
+    opacity: .10;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E");
+}
+
+header {
+    height: 75px;
+    padding: 0 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #292929;
+}
+
+.logo {
+    font-family: 'Space Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 3px;
+}
+
+.status {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    color: #999;
+}
+
+.status span {
+    color: #b9ff9d;
+}
+
+.hero {
+    min-height: 85vh;
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    align-items: center;
+    padding: 60px 9%;
+    gap: 60px;
+}
+
+.info {
+    animation: appear 1.2s ease forwards;
+}
+
+.tag {
+    color: #999;
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 3px;
+    margin-bottom: 30px;
+}
+
+h1 {
+    font-family: 'Anton', sans-serif;
+    font-size: clamp(65px, 10vw, 135px);
+    line-height: .85;
+    font-weight: 400;
+    letter-spacing: -2px;
+}
+
+h1 span {
+    color: #777;
+}
+
+.subtitle {
+    margin-top: 35px;
+    max-width: 330px;
+    color: #999;
+    line-height: 1.8;
+    font-size: 13px;
+}
+
+.details {
+    margin-top: 45px;
+    border-top: 1px solid #333;
+    max-width: 340px;
+}
+
+.detail {
+    display: flex;
+    justify-content: space-between;
+    padding: 14px 0;
+    border-bottom: 1px solid #333;
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+}
+
+.detail span:first-child {
+    color: #777;
+}
+
+.detail span:last-child {
+    color: #eee;
+}
+
+.photo-container {
+    position: relative;
+    height: 680px;
+    max-height: 78vh;
+    overflow: hidden;
+    background: #171717;
+    animation: appear 1.5s ease forwards;
+}
+
+.photo-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 25%;
+    filter: grayscale(15%) contrast(1.08);
+    transition: transform 1s ease;
+}
+
+.photo-container:hover img {
+    transform: scale(1.035);
+}
+
+.photo-label {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    background: #080808cc;
+    padding: 12px 15px;
+}
+
+.number {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-family: 'Anton', sans-serif;
+    font-size: 35px;
+    color: #fff;
+}
+
+.archive {
+    padding: 55px 9%;
+    border-top: 1px solid #292929;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.archive h2 {
+    font-family: 'Anton', sans-serif;
+    font-size: 38px;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.archive p {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    color: #777;
+    line-height: 2;
+    text-align: right;
+}
+
+footer {
+    padding: 25px 6%;
+    border-top: 1px solid #292929;
+    display: flex;
+    justify-content: space-between;
+    color: #666;
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 1px;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media(max-width: 750px) {
+    .hero {
+        grid-template-columns: 1fr;
+        padding: 55px 7%;
+        gap: 40px;
+    }
+
+    h1 {
+        font-size: 90px;
+    }
+
+    .photo-container {
+        height: 600px;
+        max-height: none;
+    }
+
+    .archive {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .archive p {
+        text-align: left;
+    }
+
+    footer {
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">PVT. / ARCHIVE®</div>
+    <div class="status"><span>●</span> PRIVATE DATABASE</div>
+</header>
+
+<main>
+
+<section class="hero">
+
+    <div class="info">
+
+        <div class="tag">
+            INDEPENDENT MODEL AGENCY / 2026
+        </div>
+
+        <h1>
+            NO<br>
+            RULES<span>.</span><br>
+            JUST<br>
+            IMAGE.
+        </h1>
+
+        <p class="subtitle">
+            An independent visual archive.
+            Selected faces, unique identities and
+            unconventional aesthetics.
+            Not everyone gets access.
+        </p>
+
+        <div class="details">
+
+            <div class="detail">
+                <span>REFERENCE</span>
+                <span>MODEL Nº 001</span>
+            </div>
+
+            <div class="detail">
+                <span>STATUS</span>
+                <span>AVAILABLE</span>
+            </div>
+
+            <div class="detail">
+                <span>COLLECTION</span>
+                <span>PRIVATE / 01</span>
+            </div>
+
+            <div class="detail">
+                <span>LOCATION</span>
+                <span>EL SALVADOR</span>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="photo-container">
+
+        <img src="foto.jpg" alt="Model portfolio">
+
+        <div class="number">001</div>
+
+        <div class="photo-label">
+            FIG. 001 — CONFIDENTIAL PORTRAIT
+        </div>
+
+    </div>
+
+</section>
+
+<section class="archive">
+
+    <h2>NOT FOR EVERYONE.</h2>
+
+    <p>
+        PRIVATE COLLECTION<br>
+        VISUAL IDENTITY / 001<br>
+        © 2026 — PVT ARCHIVE
+    </p>
+
+</section>
+
+</main>
+
+<footer>
+    <span>PRIVATE MODEL ARCHIVE®</span>
+    <span>UNAUTHORIZED ACCESS RESTRICTED</span>
+    <span>EST. 2026</span>
+</footer>
+
+</body>
+</html>
